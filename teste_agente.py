@@ -7,7 +7,7 @@ from datetime import datetime
 
 #load_dotenv()
 
-# Configuração da API e do ID do Assistente # asst_bWjV0p7J0MUiSt8nbl4TuMhG
+# Configuração da API e do ID do Assistente
 
 #client = OpenAI(api_key=os.getenv("YOUR_OPENAI_API_KEY"))
 client = OpenAI(api_key=st.secrets["YOUR_OPENAI_API_KEY"])
