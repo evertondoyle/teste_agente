@@ -2,14 +2,10 @@ import streamlit as st
 import time
 from openai import OpenAI
 import os
-#from dotenv import load_dotenv
 from datetime import datetime
-
-#load_dotenv()
 
 # Configuração da API e do ID do Assistente
 
-#client = OpenAI(api_key=os.getenv("YOUR_OPENAI_API_KEY"))
 client = OpenAI(api_key=st.secrets["YOUR_OPENAI_API_KEY"])
 
 # Função para enviar a pergunta ao assistente e obter a resposta
@@ -26,7 +22,6 @@ def responder_pergunta(pergunta):
     )
 
     # Envia o thread para o assistente (como uma nova execução)
-    #run = client.beta.threads.runs.create(thread_id=thread.id, assistant_id=os.getenv("ASSISTANT_ID"))
     run = client.beta.threads.runs.create(thread_id=thread.id, assistant_id=st.secrets["ASSISTANT_ID"])
     st.write(f"👉 Conversa id: {run.id}")
 
